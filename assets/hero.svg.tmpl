@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="380" viewBox="0 0 840 380" role="img" aria-labelledby="t">
+  <title id="t">ana takes the task "Add input validation to the signup endpoint and run the tests": it plans, edits two files, verifies with pytest (12 passed) and remembers what it learned.</title>
+  <style>
+    @font-face { font-family: "SG"; font-weight: 400; src: url(data:font/woff2;base64,$sg400) format("woff2"); }
+    @font-face { font-family: "SG"; font-weight: 700; src: url(data:font/woff2;base64,$sg700) format("woff2"); }
+    @font-face { font-family: "JBM"; font-weight: 400; src: url(data:font/woff2;base64,$jbm400) format("woff2"); }
+
+    text { font-family: "SG", -apple-system, "Segoe UI", sans-serif; fill: $ink; }
+    .mark { font-weight: 700; font-size: 88px; letter-spacing: -1.8px; }
+    .code { font-family: "JBM", ui-monospace, Menlo, monospace; font-size: 15px; }
+    .phase { font-size: 17px; fill: $muted; }
+    .detail { font-size: 17px; }
+    .caption { font-size: 20px; }
+    .muted { fill: $muted; }
+    .violet { fill: $violet; }
+    .pass { fill: $pass; }
+    .rule { stroke: $rule; stroke-width: 1; }
+    .spine { stroke: $rule; stroke-width: 2; }
+    .node { fill: $bg; stroke: $muted; stroke-width: 2; }
+    .node-last { fill: $violet; }
+
+    .step { opacity: 0; animation: in 0.45s ease-out forwards; }
+    .s1 { animation-delay: 0.3s; }
+    .s2 { animation-delay: 1.0s; }
+    .s3 { animation-delay: 1.7s; }
+    .s4 { animation-delay: 2.4s; }
+    .s5 { animation-delay: 3.1s; }
+    .spine { stroke-dasharray: 150; stroke-dashoffset: 150; animation: draw 2.1s linear 0.9s forwards; }
+    @keyframes in { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .step, .spine { animation: none; opacity: 1; stroke-dashoffset: 0; }
+    }
+  </style>
+
+  <text class="mark" x="-4" y="72">ana</text>
+  <line class="rule" x1="0" y1="102" x2="840" y2="102"/>
+
+  <g class="step s1">
+    <text class="code" x="0" y="142"><tspan class="violet">❯</tspan> Add input validation to the signup endpoint and run the tests</text>
+  </g>
+
+  <line class="spine" x1="7" y1="187" x2="7" y2="307"/>
+
+  <g class="step s2">
+    <circle class="node" cx="7" cy="187" r="5"/>
+    <text class="phase" x="28" y="193">plans</text>
+    <text class="detail" x="150" y="193">Reads <tspan class="code">routes/signup.py</tspan> and the user schema, proposes two changes</text>
+  </g>
+  <g class="step s3">
+    <circle class="node" cx="7" cy="227" r="5"/>
+    <text class="phase" x="28" y="233">edits</text>
+    <text class="detail" x="150" y="233"><tspan class="code">routes/signup.py</tspan>, <tspan class="code">tests/test_signup.py</tspan></text>
+  </g>
+  <g class="step s4">
+    <circle class="node" cx="7" cy="267" r="5"/>
+    <text class="phase" x="28" y="273">verifies</text>
+    <text class="detail" x="150" y="273"><tspan class="code">pytest</tspan><tspan class="code pass" dx="12">12 passed</tspan></text>
+  </g>
+  <g class="step s5">
+    <circle class="node-last" cx="7" cy="307" r="6"/>
+    <text class="phase" x="28" y="313">remembers</text>
+    <text class="detail" x="150" y="313">Signup validation lives in the request model, not the route</text>
+  </g>
+
+  <line class="rule" x1="0" y1="343" x2="840" y2="343"/>
+  <text class="caption muted" x="0" y="376">An AI coding agent that plans before it touches your code.</text>
+</svg>
