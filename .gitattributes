@@ -1,0 +1,2 @@
+assets/*.tmpl linguist-detectable=false
+assets/*.svg linguist-generated=true

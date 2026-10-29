@@ -2,7 +2,8 @@
 # requires-python = ">=3.10"
 # dependencies = ["fonttools[woff]"]
 # ///
-"""Build assets/ana-light.svg and assets/ana-dark.svg from assets/hero.svg.tmpl.
+"""Build the light/dark hero SVGs in assets/ from hero.svg.tmpl (wide) and
+hero-narrow.svg.tmpl (phones).
 
 Fonts are pinned to static weights, subset to the glyphs the hero uses and
 inlined as WOFF2, because GitHub renders the SVG as an image and won't fetch
@@ -22,7 +23,7 @@ from fontTools.ttLib import TTFont
 from fontTools.varLib import instancer
 
 ROOT = Path(__file__).resolve().parent.parent
-TEMPLATE = ROOT / "assets" / "hero.svg.tmpl"
+TEMPLATES = {"ana": ROOT / "assets" / "hero.svg.tmpl", "ana-narrow": ROOT / "assets" / "hero-narrow.svg.tmpl"}
 
 THEMES = {
     "light": {"ink": "#1B2430", "muted": "#5B6573", "rule": "#C9CFD8", "violet": "#5B3FD0", "pass": "#2F7D5B", "bg": "#FFFFFF"},
@@ -45,20 +46,21 @@ def font_b64(path: Path, weight: int, text: str) -> str:
 
 
 def main() -> None:
-    template = TEMPLATE.read_text()
+    templates = {name: path.read_text() for name, path in TEMPLATES.items()}
     # Every visible character, plus a little slack for edits to the copy.
-    visible = re.sub(r"<[^>]+>", "", template.split("</style>", 1)[1])
+    visible = "".join(re.sub(r"<[^>]+>", "", t.split("</style>", 1)[1]) for t in templates.values())
     glyphs = "".join(sorted(set(visible))) + "0123456789"
     fonts = dict(
         sg400=font_b64(ROOT / "fonts/SchibstedGrotesk.ttf", 400, glyphs),
         sg700=font_b64(ROOT / "fonts/SchibstedGrotesk.ttf", 700, "ana"),
         jbm400=font_b64(ROOT / "fonts/JetBrainsMono.ttf", 400, glyphs),
     )
-    for name, colors in THEMES.items():
-        svg = Template(template).substitute(**fonts, **colors)
-        out = ROOT / "assets" / f"ana-{name}.svg"
-        out.write_text(svg)
-        print(f"{out.relative_to(ROOT)}  {len(svg) / 1024:.1f} KB")
+    for prefix, template in templates.items():
+        for name, colors in THEMES.items():
+            svg = Template(template).substitute(**fonts, **colors)
+            out = ROOT / "assets" / f"{prefix}-{name}.svg"
+            out.write_text(svg)
+            print(f"{out.relative_to(ROOT)}  {len(svg) / 1024:.1f} KB")
 
 
 if __name__ == "__main__":
