@@ -16,4 +16,12 @@ I'm Mátio. I build AI tools for developers and students, and ana is the main on
 - [**pocket-voice**](https://github.com/matiomacedo/pocket-voice) is a Claude Code plugin that reads responses aloud.
 - [**session-dash**](https://github.com/matiomacedo/session-dash) is a Claude Code plugin that shows all your open sessions in one terminal window: working, idle, or waiting on you.
 
+### Isabel Bot
+
+<img src="assets/isabel-bot.png" width="80" height="64" align="left" alt="Isabel Bot logo">
+
+A GitHub App I built for my own repos. It reviews pull requests and pushes, replies to new issues and opens a PR when a merge leaves the docs out of date. It only comments and opens PRs, so it never approves or merges anything. The code is private, so there's no link.
+
+<br clear="left">
+
 Reach me on [LinkedIn](https://www.linkedin.com/in/m%C3%A1tio-macedo-753309400/).
