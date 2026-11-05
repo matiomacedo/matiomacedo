@@ -15,6 +15,7 @@ I'm Mátio. I build AI tools for developers and students, and ana is the main on
 - [**Noctary**](https://github.com/matiomacedo/Noctary) lets you ask questions, get summaries and take quizzes over your own study notes.
 - [**pocket-voice**](https://github.com/matiomacedo/pocket-voice) is a Claude Code plugin that reads responses aloud.
 - [**session-dash**](https://github.com/matiomacedo/session-dash) is a Claude Code plugin that shows all your open sessions in one terminal window: working, idle, or waiting on you.
+- [**node-code**](https://github.com/matiomacedo/node-code) is a Claude Code plugin that draws your repo as a live graph and lights up the files as Claude reads and edits them.
 
 ### Isabel Bot
 
